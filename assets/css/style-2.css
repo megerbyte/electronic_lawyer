@@ -1,0 +1,18 @@
+body {
+    background: #f8f9fa;
+    color: #333;
+    font-family: 'Times New Roman', serif;
+}
+
+h1, h2 {
+    color: #001f3f; /* Navy blue */
+}
+
+.btn-primary {
+    background: #001f3f;
+    border-color: #001f3f;
+}
+
+.highlight {
+    background: yellow;
+}

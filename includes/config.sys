@@ -1,0 +1,44 @@
+<?php
+// Database credentials
+define('DB_HOST', 'localhost');
+define('DB_USER', 'resemzqt_randy');
+define('DB_PASS', 'Corky@4332661');
+define('DB_NAME', 'resemzqt_researchrepository');
+
+// hCAPTCHA keys
+define('hCAPTCHA_SITE_KEY', '791ee6a0-e130-45b8-b676-872c75b0321a');
+define('hCAPTCHA_SECRET_KEY', 'ES_621c939c5fab467985887cd9a9302886');
+
+// Stripe keys (replace with your real keys)
+define('STRIPE_PUBLISHABLE_KEY', 'pk_test_yourkey');
+define('STRIPE_SECRET_KEY', 'sk_test_yourkey');
+
+// Email settings for PHPMailer
+define('SMTP_HOST', 'smtp.yourmail.com'); // e.g., smtp.gmail.com
+define('SMTP_USER', 'your@email.com');
+define('SMTP_PASS', 'yourpassword');
+define('SMTP_FROM', 'no-reply@yourdomain.com');
+define('SMTP_FROM_NAME', 'Case Evaluation');
+
+// Site URL (replace with your real domain)
+define('SITE_URL', 'https://www.yourdomain.com');
+
+// Folders
+define('DOC_TEMPLATES_DIR', __DIR__ . '/../assets/documents/templates/');
+define('DOC_GENERATED_DIR', __DIR__ . '/../assets/documents/generated/');
+
+// Universal getDB() fallback for legacy and generated code
+if (!function_exists('getDB')) {
+    function getDB() {
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        if ($conn->connect_error) {
+            die("Database connection failed: " . $conn->connect_error);
+        }
+        return $conn;
+    }
+}
+
+// Error reporting (disable in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
