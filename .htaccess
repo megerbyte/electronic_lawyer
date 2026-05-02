@@ -1,0 +1,16 @@
+# [RECONSTRUCTED .HTACCESS]
+Options -Indexes
+RewriteEngine On
+
+# Ensure the server looks for index.html as a priority
+DirectoryIndex index.html index.php
+
+# If a user requests a file without an extension (e.g., /First_Contact)
+# this rule checks for the .html version FIRST and serves it.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L]
+
+# Only if the file is truly missing does it go to the 404 handler
+ErrorDocument 404 /redirect_handler.php
