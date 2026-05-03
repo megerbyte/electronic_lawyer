@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire</title>
-    <link rel="stylesheet" type="text/css" href="https://researchrepository.info/Master_folders/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://researchrepository.info/Master_Folders/styles.css">
 </head>
 <body>
     <div id="mindmap-container">
@@ -5996,6 +5996,6 @@
 </ul>
         <a id="report-download-link" href="#" download="generated_report.html">Download Your Report</a>
     </div>
-    <script src="/Master_folders/script.js"></script>
+    <script src="/Master_Folders/script.js"></script>
 </body>
 </html>

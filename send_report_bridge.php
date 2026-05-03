@@ -16,7 +16,7 @@ file_put_contents('/tmp/bridge_debug.txt', "Session: ".print_r($_SESSION,true)."
 if (!$report_name || !$report_path || !file_exists($report_path)) {
     file_put_contents('/tmp/bridge_debug.txt', "Missing report_name or report_path or file.\n", FILE_APPEND);
     $_SESSION['form_errors'] = ["No report file found in session. Please regenerate your report."];
-    header('Location: /First_Contact.php?form=error');
+    header('Location: /First_Contact.html?form=error');
     exit;
 }
 
@@ -53,12 +53,12 @@ if ($httpCode === 200 && $response) {
         exit;
     } else {
         $_SESSION['form_errors'] = ['Error sending report to lawyers: ' . ($result['message'] ?? 'Unknown error')];
-        header('Location: /First_Contact.php?form=error');
+        header('Location: /First_Contact.html?form=error');
         exit;
     }
 } else {
     $_SESSION['form_errors'] = ['Could not send report to lawyers. Please try again.'];
-    header('Location: /First_Contact.php?form=error');
+    header('Location: /First_Contact.html?form=error');
     exit;
 }
 ?>

@@ -21,7 +21,7 @@ foreach ($fields as $field) {
 }
 if ($missing) {
     $_SESSION['form_errors'] = ["Missing fields: " . implode(', ', $missing)];
-    header('Location: /Master_folders/Criminal/First_Contact/First_Contact.html?form=error');
+    header('Location: /Master_Folders/Criminal/First_Contact/First_Contact.html?form=error');
     exit;
 }
 
@@ -32,12 +32,12 @@ if (isset($_SESSION['report_name'])) {
         $postData['report_file'] = new CURLFile($reportFile, 'text/plain', $_SESSION['report_name']);
     } else {
         $_SESSION['form_errors'] = ["Report file not found. Please regenerate your report."];
-        header('Location: /Master_folders/Criminal/First_Contact/First_Contact.html?form=error');
+        header('Location: /Master_Folders/Criminal/First_Contact/First_Contact.html?form=error');
         exit;
     }
 } else {
     $_SESSION['form_errors'] = ["No report file found in session. Please regenerate your report."];
-    header('Location: /Master_folders/Criminal/First_Contact/First_Contact.html?form=error');
+    header('Location: /Master_Folders/Criminal/First_Contact/First_Contact.html?form=error');
     exit;
 }
 
@@ -59,7 +59,7 @@ if ($httpCode === 302 || $httpCode === 200) {
     exit;
 } else {
     $_SESSION['form_errors'] = ['Error processing form data. Please try again.'];
-    header('Location: /Master_folders/Criminal/First_Contact/First_Contact.html?form=error');
+    header('Location: /Master_Folders/Criminal/First_Contact/First_Contact.html?form=error');
     exit;
 }
 ?>

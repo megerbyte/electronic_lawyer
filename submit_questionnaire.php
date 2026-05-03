@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     if ($errors) {
         $_SESSION['form_errors'] = $errors;
-        header('Location: First_Contact.php?form=error');
+        header('Location: First_Contact.html?form=error');
         exit;
     }
     // Save to DB -- Example table: questionnaire_responses
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (Exception $e) {
         error_log('Questionnaire insert error: ' . $e->getMessage());
         $_SESSION['form_errors'] = ['An internal error occurred. Please try again later.'];
-        header('Location: First_Contact.php?form=error');
+        header('Location: First_Contact.html?form=error');
         exit;
     }
 } else {
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div style="margin:2em auto;max-width:600px;text-align:center">
         <h2>405 Method Not Allowed</h2>
         <p>This page can only be accessed by submitting the questionnaire form.</p>
-        <a href="First_Contact.php">Return to questionnaire</a>
+        <a href="First_Contact.html">Return to questionnaire</a>
     </div>
     </body>
     </html>
