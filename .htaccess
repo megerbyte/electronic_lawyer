@@ -6,7 +6,7 @@ RewriteEngine On
 DirectoryIndex index.html index.php
 
 # Redirect First_Contact.php to First_Contact.htm (preserve query string)
-RewriteRule ^Master_folders/Criminal/First_Contact/First_Contact\.php$ /Master_folders/Criminal/First_Contact/First_Contact.htm [R=301,QSA,L]
+RewriteRule ^Master_Folders/Criminal/First_Contact/First_Contact\.php$ /Master_Folders/Criminal/First_Contact/First_Contact.htm [R=301,QSA,L]
 
 # If a user requests a file without an extension (e.g., /First_Contact)
 # this rule checks for the .html version FIRST and serves it.
