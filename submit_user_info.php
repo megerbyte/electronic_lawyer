@@ -106,7 +106,7 @@ if (isset($_FILES['report_file']) && $_FILES['report_file']['error'] === UPLOAD_
     $_SESSION['prospect_id'] = $prospectId;
     unset($_SESSION['csrf_token']);
     // Redirect to the questionnaire
-    header('Location: /Master_folders/Criminal/First_Contact/First_Contact.php');
+    header('Location: /Master_Folders/Criminal/First_Contact/First_Contact.php');
     ob_end_flush();
     exit;
 }
