@@ -5,7 +5,7 @@ try {
     $file = fopen('C:/xampp/htdocs/researchrepository.info/dfw.csv', 'r');
     $sql_file = fopen('C:/xampp/htdocs/researchrepository.info/import_lawyers.sql', 'w');
 
-    fwrite($sql_file, "USE resemzqt_researchrepository;\n\n");
+    fwrite($sql_file, "USE " . DB_NAME . ";\n\n");
 
     while (($row = fgetcsv($file)) !== false) {
         if (count($row) >= 17) {

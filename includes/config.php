@@ -1,27 +1,35 @@
 <?php
+// Only enable error reporting in local development — never in production
+error_reporting(0);
+ini_set('display_errors', 0);
+
+// Environment variables must be loaded before this file is included.
+// Use a library such as vlucas/phpdotenv or set variables via your web server
+// (e.g. Apache SetEnv / Nginx fastcgi_param) or hosting control panel.
+
 // Database credentials
-define('DB_HOST', 'localhost');
-define('DB_USER', 'resemzqt_randy');
-define('DB_PASS', 'Corky@4332661');
-define('DB_NAME', 'resemzqt_researchrepository');
+define('DB_HOST', $_ENV['DB_HOST']);
+define('DB_USER', $_ENV['DB_USER']);
+define('DB_PASS', $_ENV['DB_PASS']);
+define('DB_NAME', $_ENV['DB_NAME']);
 
 // hCAPTCHA keys
-define('hCAPTCHA_SITE_KEY', '791ee6a0-e130-45b8-b676-872c75b0321a');
-define('hCAPTCHA_SECRET_KEY', 'ES_621c939c5fab467985887cd9a9302886');
+define('hCAPTCHA_SITE_KEY', $_ENV['hCAPTCHA_SITE_KEY']);
+define('hCAPTCHA_SECRET_KEY', $_ENV['hCAPTCHA_SECRET_KEY']);
 
-// Stripe keys (set in Stripe dashboard)
-define('STRIPE_PUBLISHABLE_KEY', 'pk_test_yourkey'); // Replace
-define('STRIPE_SECRET_KEY', 'sk_test_yourkey'); // Replace
+// Stripe keys
+define('STRIPE_PUBLISHABLE_KEY', $_ENV['STRIPE_PUBLISHABLE_KEY']);
+define('STRIPE_SECRET_KEY', $_ENV['STRIPE_SECRET_KEY']);
 
 // Email settings for PHPMailer
-define('SMTP_HOST', 'smtp.yourmail.com'); // e.g., smtp.gmail.com
-define('SMTP_USER', 'your@email.com');
-define('SMTP_PASS', 'yourpassword');
-define('SMTP_FROM', 'no-reply@yourdomain.com');
-define('SMTP_FROM_NAME', 'Case Evaluation');
+define('SMTP_HOST', $_ENV['SMTP_HOST']);
+define('SMTP_USER', $_ENV['SMTP_USER']);
+define('SMTP_PASS', $_ENV['SMTP_PASS']);
+define('SMTP_FROM', $_ENV['SMTP_FROM']);
+define('SMTP_FROM_NAME', $_ENV['SMTP_FROM_NAME']);
 
-// Site URL (replace with your domain)
-define('SITE_URL', 'https://www.yourdomain.com');
+// Site URL
+define('SITE_URL', $_ENV['SITE_URL']);
 
 // Folders
 define('DOC_TEMPLATES_DIR', __DIR__ . '/../assets/documents/templates/');
@@ -29,8 +37,4 @@ define('DOC_GENERATED_DIR', __DIR__ . '/../assets/documents/generated/');
 
 // Start session
 // session_start();
-
-// Error reporting (disable in production)
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 ?>

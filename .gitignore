@@ -1,0 +1,5 @@
+.env
+error_log
+phpinfo.php
+debug.php
+*.log

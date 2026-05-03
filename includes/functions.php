@@ -1,9 +1,9 @@
 <?php
 // includes/functions.php
 
-// Enable error reporting during development (disable in production)
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// Only enable error reporting in local development — never in production
+ini_set('display_errors', 0);
+error_reporting(0);
 
 // Start session
 if (session_status() === PHP_SESSION_NONE) {
@@ -12,10 +12,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Database connection function
 function db_connect() {
-    $host = 'localhost';
-    $db   = 'resemzqt_researchrepository';
-    $user = 'resemzqt_randy';
-    $pass = 'Corky@4332661';
+    $host = DB_HOST;
+    $db   = DB_NAME;
+    $user = DB_USER;
+    $pass = DB_PASS;
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
