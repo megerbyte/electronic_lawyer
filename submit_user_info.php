@@ -74,7 +74,7 @@ if (isset($_FILES['report_file']) && $_FILES['report_file']['error'] === UPLOAD_
     $allowedTypes = ['text/plain'];
     if (!in_array($_FILES['report_file']['type'], $allowedTypes)) {
         $_SESSION['form_errors'] = ['Invalid file type. Only text files are allowed.'];
-        header('Location: /First_Contact.php?form=error');
+        header('Location: /First_Contact.html?form=error');
         ob_end_flush();
         exit;
     }
@@ -106,7 +106,7 @@ if (isset($_FILES['report_file']) && $_FILES['report_file']['error'] === UPLOAD_
     $_SESSION['prospect_id'] = $prospectId;
     unset($_SESSION['csrf_token']);
     // Redirect to the questionnaire
-    header('Location: /Master_folders/Criminal/First_Contact/First_Contact.php');
+    header('Location: /Master_Folders/Criminal/First_Contact/First_Contact.html');
     ob_end_flush();
     exit;
 }
