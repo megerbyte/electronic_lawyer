@@ -23,6 +23,6 @@ if ($prospect_id) {
 <body>
     <h1>Welcome, <?php echo htmlspecialchars($prospect_info['name'] ?? 'User'); ?>!</h1>
     <p>Your information has been saved. Click below to begin the questionnaire.</p>
-    <a href="/Master_folders/Criminal/First_Contact/First Contact.html?prospect_id=<?php echo $prospect_id; ?>">Start Questionnaire</a>
+    <a href="/Master_Folders/Criminal/First_Contact/First Contact.html?prospect_id=<?php echo $prospect_id; ?>">Start Questionnaire</a>
 </body>
 </html>
