@@ -7,6 +7,9 @@ if (!defined('EL_DB_HOST')) {
     define('EL_DB_HOST', defined('DB_HOST') ? DB_HOST : 'localhost');
 }
 if (!defined('EL_DB_NAME')) {
+    // Default database name for the legal forms system.
+    // Override this constant in config.php or your server environment if your
+    // database has a different name (e.g., on shared hosting: 'user_electronic_lawyer').
     define('EL_DB_NAME', 'electronic_lawyer');
 }
 if (!defined('EL_DB_USER')) {

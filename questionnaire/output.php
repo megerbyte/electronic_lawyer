@@ -83,6 +83,10 @@ foreach ($allBlocks as $block) {
 
 /**
  * Substitute {{variable_name}} tokens with user-supplied values (or a red placeholder).
+ *
+ * The pattern /\{\{([a-z0-9_]+)\}\}/ matches the normalized variable tokens produced by
+ * seed_forms.php's build_content_template() function, which converts all real placeholders
+ * to {{snake_case_name}} format using the same [a-z0-9_] character set.
  */
 function substitute_vars(string $template, array $answers): string
 {

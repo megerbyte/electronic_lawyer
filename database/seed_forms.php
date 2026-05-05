@@ -350,7 +350,7 @@ function normalize_variable_name(string $raw): string
     $clean = preg_replace('/\s+/', '_', trim($clean));
     $clean = preg_replace('/_+/', '_', $clean);
 
-    // Truncate to 100 chars max
+    // Truncate to match database schema VARCHAR(100) constraint
     return substr($clean, 0, 100);
 }
 
@@ -396,7 +396,8 @@ function parse_form_html(string $html): array
         $innerText = trim(strip_tags($inner));
         $innerText = html_entity_decode($innerText, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-        // Skip empty paragraphs
+        // Skip empty paragraphs — also skip Unicode non-breaking space (\u{00A0})
+        // which browsers often insert for visually blank paragraphs
         if ($innerText === '' || $innerText === "\u{00A0}") {
             continue;
         }

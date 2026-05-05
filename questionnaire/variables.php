@@ -48,7 +48,7 @@ if (!$form) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Save variable answers
     foreach ($_POST as $key => $value) {
-        if (!str_starts_with($key, 'var_')) {
+        if (!str_starts_with($key, 'var_') || !ctype_digit(substr($key, 4))) {
             continue;
         }
         $varId      = (int)substr($key, 4);

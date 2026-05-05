@@ -191,7 +191,7 @@ $stepNumber = count($breadcrumb) + 1;
             <input type="hidden" name="node" value="<?= (int)$prevCrumb['node_id'] ?>">
             <button type="submit"
                 class="btn btn-secondary"
-                onclick="<?= htmlspecialchars("history.go(-1); return false;") ?>">
+                onclick="history.go(-1); return false;">
                 &larr; Back
             </button>
         </form>
