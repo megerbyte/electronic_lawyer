@@ -1,0 +1,171 @@
+/* questionnaire/styles.css — Shared stylesheet for the legal document questionnaire system */
+
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.4em;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.1em;
+}
+
+.question {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.option {
+    display: block;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: normal;
+    transition: background 0.15s ease;
+}
+
+.option:hover {
+    background: #f0f0f0;
+}
+
+input[type=radio] {
+    margin-right: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+}
+
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=tel],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: white;
+}
+
+input[type=text]:focus,
+input[type=date]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #1a3a5c;
+    box-shadow: 0 0 0 2px rgba(26,58,92,0.15);
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.hint {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 3px;
+    font-style: italic;
+}
+
+.btn {
+    background: #1a3a5c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s ease;
+}
+
+.btn:hover {
+    background: #0d2640;
+}
+
+.btn-secondary {
+    background: #666;
+}
+
+.btn-secondary:hover {
+    background: #444;
+}
+
+.progress {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 3px solid #1a3a5c;
+    border-radius: 0 3px 3px 0;
+}
+
+.section-group {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    background: #fafafa;
+}
+
+.section-group h3 {
+    margin-top: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a3a5c;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        max-width: none;
+    }
+
+    .card {
+        box-shadow: none;
+        padding: 0;
+    }
+}
